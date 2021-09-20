@@ -3,26 +3,27 @@ package service
 import (
 	"bufio"
 	"fmt"
-	mongoDBLibLogger "github.com/free5gc/MongoDBLibrary/logger"
-	"github.com/free5gc/nwdaf/analyticsinfo"
-	"github.com/free5gc/nwdaf/eventssubscription"
-	openApiLogger "github.com/free5gc/openapi/logger"
-	pathUtilLogger "github.com/free5gc/path_util/logger"
 	"io"
 	"os/exec"
 	"sync"
 
+	"github.com/ciromacedo/nwdaf/analyticsinfo"
+	"github.com/ciromacedo/nwdaf/eventssubscription"
+	mongoDBLibLogger "github.com/free5gc/MongoDBLibrary/logger"
+	openApiLogger "github.com/free5gc/openapi/logger"
+	pathUtilLogger "github.com/free5gc/path_util/logger"
+
 	"github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
 
+	"github.com/ciromacedo/nwdaf/consumer"
+	nwdaf_context "github.com/ciromacedo/nwdaf/context"
+	"github.com/ciromacedo/nwdaf/factory"
+	"github.com/ciromacedo/nwdaf/logger"
+	"github.com/ciromacedo/nwdaf/util"
 	"github.com/free5gc/MongoDBLibrary"
 	"github.com/free5gc/http2_util"
 	"github.com/free5gc/logger_util"
-	"github.com/free5gc/nwdaf/consumer"
-	nwdaf_context "github.com/free5gc/nwdaf/context"
-	"github.com/free5gc/nwdaf/factory"
-	"github.com/free5gc/nwdaf/logger"
-	"github.com/free5gc/nwdaf/util"
 	"github.com/free5gc/path_util"
 )
 

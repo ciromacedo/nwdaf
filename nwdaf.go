@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/free5gc/NFs/nwdaf/logger"
-	nwdaf_service "github.com/free5gc/NFs/nwdaf/service"
-	"github.com/free5gc/NFs/nwdaf/version"
 	"os"
+
+	"github.com/ciromacedo/nwdaf/logger"
+	nwdaf_service "github.com/ciromacedo/nwdaf/service"
+	"github.com/ciromacedo/nwdaf/version"
 
 	"github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
@@ -34,7 +35,7 @@ func main() {
 	}
 }
 
-func action(c *cli.Context) error{
+func action(c *cli.Context) error {
 
 	//app.AppInitializeWillInitialize(c.String("free5gccfg"))
 	//NWDAF.Initialize(c)

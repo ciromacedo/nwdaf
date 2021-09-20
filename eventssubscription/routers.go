@@ -7,10 +7,11 @@
 package eventssubscription
 
 import (
-	"github.com/free5gc/logger_util"
-	"github.com/free5gc/nwdaf/logger"
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/ciromacedo/nwdaf/logger"
+	"github.com/free5gc/logger_util"
+	"github.com/gin-gonic/gin"
 )
 
 // Route is the information for every URI.

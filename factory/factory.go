@@ -10,7 +10,7 @@ import (
 
 	"gopkg.in/yaml.v2"
 
-	"github.com/free5gc/nwdaf/logger"
+	"github.com/ciromacedo/nwdaf/logger"
 )
 
 var NwdafConfig Config
@@ -50,7 +50,6 @@ func InitConfigFactory(f string) {
 	logger.InitLog.Infof("Successfully initialize configuration %s", f)
 }
 */
-
 
 func CheckConfigVersion() error {
 	currentVersion := NwdafConfig.GetVersion()

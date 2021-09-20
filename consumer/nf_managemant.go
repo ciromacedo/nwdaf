@@ -3,13 +3,14 @@ package consumer
 import (
 	"context"
 	"fmt"
-	"github.com/free5gc/openapi/Nnrf_NFManagement"
-	"github.com/free5gc/openapi/models"
-	nwdaf_context "github.com/free5gc/nwdaf/context"
-	"github.com/free5gc/nwdaf/factory"
 	"net/http"
 	"strings"
 	"time"
+
+	nwdaf_context "github.com/ciromacedo/nwdaf/context"
+	"github.com/ciromacedo/nwdaf/factory"
+	"github.com/free5gc/openapi/Nnrf_NFManagement"
+	"github.com/free5gc/openapi/models"
 )
 
 func BuildNFInstance(context *nwdaf_context.NWDAFContext) models.NfProfile {
@@ -24,8 +25,8 @@ func BuildNFInstance(context *nwdaf_context.NWDAFContext) models.NfProfile {
 	apiPrefix := fmt.Sprintf("%s://%s:%d", context.UriScheme, context.RegisterIPv4, context.SBIPort)
 	services := []models.NfService{ //TODO: Outras funções usam um "for" para preencher os serviços.
 		{
-			ServiceInstanceId: "nwdafdatarepository",        //TODO: Renomear para o ID correto. E excluir o código do serviço de exemplo: ServiceName_NNWDAF_DR
-			ServiceName:       "nnwdaf-dr",                  //TODO: Renomear para o serviço correto! ServiceName_NNWDAF_ANALYTICSINFO
+			ServiceInstanceId: "nwdafdatarepository", //TODO: Renomear para o ID correto. E excluir o código do serviço de exemplo: ServiceName_NNWDAF_DR
+			ServiceName:       "nnwdaf-dr",           //TODO: Renomear para o serviço correto! ServiceName_NNWDAF_ANALYTICSINFO
 			Versions: &[]models.NfServiceVersion{
 				{
 					ApiFullVersion:  version,

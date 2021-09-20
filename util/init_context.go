@@ -6,10 +6,10 @@ import (
 
 	"github.com/google/uuid"
 
+	nwdaf_context "github.com/ciromacedo/nwdaf/context"
+	"github.com/ciromacedo/nwdaf/factory"
+	"github.com/ciromacedo/nwdaf/logger"
 	"github.com/free5gc/openapi/models"
-	nwdaf_context "github.com/free5gc/nwdaf/context"
-	"github.com/free5gc/nwdaf/factory"
-	"github.com/free5gc/nwdaf/logger"
 )
 
 func InitNwdafContext(context *nwdaf_context.NWDAFContext) {

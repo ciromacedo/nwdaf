@@ -3,9 +3,10 @@ package util
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/free5gc/openapi/models"
-	"github.com/free5gc/nwdaf/logger"
 	"strconv"
+
+	"github.com/ciromacedo/nwdaf/logger"
+	"github.com/free5gc/openapi/models"
 
 	"go.mongodb.org/mongo-driver/bson"
 )
