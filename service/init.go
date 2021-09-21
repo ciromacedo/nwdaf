@@ -9,6 +9,7 @@ import (
 
 	"github.com/ciromacedo/nwdaf/analyticsinfo"
 	"github.com/ciromacedo/nwdaf/eventssubscription"
+	"github.com/ciromacedo/nwdaf/datacollection"
 	mongoDBLibLogger "github.com/free5gc/MongoDBLibrary/logger"
 	openApiLogger "github.com/free5gc/openapi/logger"
 	pathUtilLogger "github.com/free5gc/path_util/logger"
@@ -217,6 +218,7 @@ func (nwdaf *NWDAF) Start() {
 	//datarepository.AddService(router)
 	analyticsinfo.AddService(router)
 	eventssubscription.AddService(router)
+	datacolletion.AddService(router)
 
 	nwdafLogPath := util.NwdafLogPath
 	nwdafPemPath := util.NwdafPemPath

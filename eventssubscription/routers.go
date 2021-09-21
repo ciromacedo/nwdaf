@@ -7,11 +7,10 @@
 package eventssubscription
 
 import (
-	"net/http"
-
 	"github.com/ciromacedo/nwdaf/logger"
 	"github.com/free5gc/logger_util"
 	"github.com/gin-gonic/gin"
+	"net/http"
 )
 
 // Route is the information for every URI.
@@ -101,6 +100,7 @@ var routes = Routes{
 		"/eventssubscription",
 		CachedPageHandler,
 	},
+
 
 	//{
 	//	"AccessTokenRequest",
