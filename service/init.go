@@ -218,7 +218,7 @@ func (nwdaf *NWDAF) Start() {
 	//datarepository.AddService(router)
 	analyticsinfo.AddService(router)
 	eventssubscription.AddService(router)
-	datacolletion.AddService(router)
+	datacollection.AddService(router)
 
 	nwdafLogPath := util.NwdafLogPath
 	nwdafPemPath := util.NwdafPemPath
