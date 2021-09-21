@@ -28,7 +28,6 @@ func NewRouter() *gin.Engine {
 	AddService(router)
 	return router
 }
-
 func AddService(engine *gin.Engine) *gin.RouterGroup {
 	group := engine.Group("")
 
