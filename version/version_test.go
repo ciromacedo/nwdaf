@@ -2,7 +2,7 @@ package version_test
 
 import (
 	"fmt"
-	"free5gc/src/nwdaf/version"
+	"github.com/ciromacedo/nwdaf/version"
 	"os/exec"
 	"runtime"
 	"strings"
