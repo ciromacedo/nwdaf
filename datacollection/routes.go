@@ -58,12 +58,5 @@ var routes = Routes{
 		"/amf-contexts/registration-accept",
 		HTTPAmfRegistrationAccept,
 	},
-
-	//{
-	//	"AccessTokenRequest",
-	//	strings.ToUpper("Post"),
-	//	"/oauth2/token",
-	//	HTTPAccessTokenRequest,
-	//},
 }
 

@@ -1,8 +1,8 @@
 package datacollection
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
-	"golang.org/x/tools/go/analysis/passes/printf/testdata/src/a"
 )
 
 
@@ -11,7 +11,7 @@ func HTTPAmfRegistrationAccept(c *gin.Context) {
 	if err != nil {
 		return
 	}
-	a.Println(requestBody)
+	fmt.Println(requestBody)
 
 	/*err = openapi.Deserialize(&ueContextRelease, requestBody, "application/json")
 	if err != nil {

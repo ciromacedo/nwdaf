@@ -59,37 +59,6 @@ func (*NWDAF) GetCliCmd() (flags []cli.Flag) {
 	return nwdafCLi
 }
 
-/*func (*NWDAF) Initialize(c *cli.Context) {
-
-	config = Config{
-		nwdafcfg: c.String("nwdafcfg"),
-	}
-
-	if config.nwdafcfg != "" {
-		factory.InitConfigFactory(config.nwdafcfg)
-	} else {
-		DefaultNwdafConfigPath := path_util.Gofree5gcPath("free5gc/config/nwdafcfg.yaml")
-		factory.InitConfigFactory(DefaultNwdafConfigPath)
-	}
-
-	if app.ContextSelf().Logger.NWDAF.DebugLevel != "" {
-		level, err := logrus.ParseLevel(app.ContextSelf().Logger.NWDAF.DebugLevel)
-		if err != nil {
-			initLog.Warnf("Log level [%s] is not valid, set to [info] level", app.ContextSelf().Logger.NWDAF.DebugLevel)
-			logger.SetLogLevel(logrus.InfoLevel)
-		} else {
-			logger.SetLogLevel(level)
-			initLog.Infof("Log level is set to [%s] level", level)
-		}
-	} else {
-		initLog.Infoln("Log level is default set to [info] level")
-		logger.SetLogLevel(logrus.InfoLevel)
-	}
-
-	logger.SetReportCaller(app.ContextSelf().Logger.NWDAF.ReportCaller)
-
-}*/
-
 func (nwdaf *NWDAF) Initialize(c *cli.Context) error {
 	config = Config{
 		nwdafcfg: c.String("nwdafcfg"),

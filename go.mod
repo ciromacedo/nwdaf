@@ -3,7 +3,6 @@ module github.com/ciromacedo/nwdaf
 go 1.14
 
 require (
-
 	github.com/antonfisher/nested-logrus-formatter v1.3.0
 	github.com/cpuguy83/go-md2man/v2 v2.0.0 // indirect
 	github.com/free5gc/MongoDBLibrary v1.0.0
@@ -20,5 +19,6 @@ require (
 	github.com/sirupsen/logrus v1.7.0
 	github.com/urfave/cli v1.22.5
 	go.mongodb.org/mongo-driver v1.4.4
+	golang.org/x/tools v0.0.0-20200825202427-b303f430e36d
 	gopkg.in/yaml.v2 v2.4.0
 )
