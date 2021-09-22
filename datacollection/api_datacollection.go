@@ -1,45 +1,34 @@
 package datacollection
 
 import (
-	"fmt"
+	"github.com/ciromacedo/nwdaf/model"
+	"github.com/ciromacedo/nwdaf/util"
+	"github.com/free5gc/openapi"
 	"github.com/gin-gonic/gin"
+	"net/http"
+	"time"
 )
 
 
 func HTTPAmfRegistrationAccept(c *gin.Context) {
+	var registrationAccept model.RegistrationAccept
 	requestBody, err := c.GetRawData()
 	if err != nil {
-		return
-	}
-	fmt.Println(requestBody)
-
-	/*err = openapi.Deserialize(&ueContextRelease, requestBody, "application/json")
-	if err != nil {
-		problemDetail := "[Request Body] " + err.Error()
-		rsp := models.ProblemDetails{
-			Title:  "Malformed request syntax",
-			Status: http.StatusBadRequest,
-			Detail: problemDetail,
-		}
-		logger.CommLog.Errorln(problemDetail)
-		c.JSON(http.StatusBadRequest, rsp)
+		c.Writer.WriteHeader(http.StatusBadGateway)
+		c.Writer.Write([]byte("Internal Error"))
 		return
 	}
 
-	req := http_wrapper.NewRequest(c.Request, ueContextRelease)
-	req.Params["ueContextId"] = c.Params.ByName("ueContextId")
-	rsp := producer.HandleReleaseUEContextRequest(req)
-
-	responseBody, err := openapi.Serialize(rsp.Body, "application/json")
+	err = openapi.Deserialize(&registrationAccept, requestBody, "application/json")
 	if err != nil {
-		logger.CommLog.Errorln(err)
-		problemDetails := models.ProblemDetails{
-			Status: http.StatusInternalServerError,
-			Cause:  "SYSTEM_FAILURE",
-			Detail: err.Error(),
-		}
-		c.JSON(http.StatusInternalServerError, problemDetails)
-	} else {
-		c.Data(rsp.Status, "application/json", responseBody)
-	}*/
+		c.Writer.WriteHeader(http.StatusBadGateway)
+		c.Writer.Write([]byte("Json Parser Error"))
+		return
+	}
+
+	registrationAccept.Date = time.Now()
+	/* registrar na base */
+	util.AddRegistrationAccept(&registrationAccept);
+	c.Writer.WriteHeader(http.StatusOK)
+	c.Writer.Write([]byte("Ok"))
 }
