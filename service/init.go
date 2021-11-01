@@ -8,8 +8,8 @@ import (
 	"sync"
 
 	"github.com/ciromacedo/nwdaf/analyticsinfo"
-	"github.com/ciromacedo/nwdaf/eventssubscription"
 	"github.com/ciromacedo/nwdaf/datacollection"
+	"github.com/ciromacedo/nwdaf/eventssubscription"
 	mongoDBLibLogger "github.com/free5gc/MongoDBLibrary/logger"
 	openApiLogger "github.com/free5gc/openapi/logger"
 	pathUtilLogger "github.com/free5gc/path_util/logger"
@@ -217,6 +217,9 @@ func (nwdaf *NWDAF) Start() {
 		initLog.Warnf("Initialize HTTP server: %+v", err)
 	}
 
+	/* init subscriber data collect */
+	datacollection.InitEventExposureSubscriber(self)
+
 	serverScheme := factory.NwdafConfig.Configuration.Sbi.Scheme
 	if serverScheme == "http" {
 		err = server.ListenAndServe()
@@ -227,6 +230,8 @@ func (nwdaf *NWDAF) Start() {
 	if err != nil {
 		initLog.Fatalf("HTTP server setup failed: %+v", err)
 	}
+
+
 }
 
 func (nwdaf *NWDAF) Exec(c *cli.Context) error {

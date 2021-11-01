@@ -19,5 +19,6 @@ require (
 	github.com/sirupsen/logrus v1.7.0
 	github.com/urfave/cli v1.22.5
 	go.mongodb.org/mongo-driver v1.4.4
+	golang.org/x/net v0.0.0-20201209123823-ac852fbbde11
 	gopkg.in/yaml.v2 v2.4.0
 )
