@@ -25,7 +25,6 @@ import (
 	"github.com/free5gc/MongoDBLibrary"
 	"github.com/free5gc/http2_util"
 	"github.com/free5gc/logger_util"
-	"github.com/free5gc/path_util"
 )
 
 type NWDAF struct{}
@@ -69,10 +68,15 @@ func (nwdaf *NWDAF) Initialize(c *cli.Context) error {
 			return err
 		}
 	} else {
-		DefaultAmfConfigPath := path_util.Free5gcPath("free5gc/config/nwdafcfg.yaml")
-		if err := factory.InitConfigFactory(DefaultAmfConfigPath); err != nil {
+		//DefaultAmfConfigPath := path_util.Free5gcPath("./config/nwdafcfg.yaml")
+
+		if err := factory.InitConfigFactory(util.DefaultNwdafConfigPath); err != nil {
 			return err
 		}
+
+		//if err := factory.InitConfigFactory(DefaultAmfConfigPath); err != nil {
+		//	return err
+		//}
 	}
 
 	nwdaf.setLogLevel()
@@ -230,7 +234,6 @@ func (nwdaf *NWDAF) Start() {
 	if err != nil {
 		initLog.Fatalf("HTTP server setup failed: %+v", err)
 	}
-
 
 }
 
