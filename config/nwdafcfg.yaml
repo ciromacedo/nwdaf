@@ -5,7 +5,7 @@ info:
 configuration:
   nwdafName: NWDAF
   sbi:
-    scheme: http
+    scheme: http  
     registerIPv4: 127.0.0.1 # IP used to register to NRF
     bindingIPv4: 127.0.0.1  # IP used to bind the service
     port: 29599
